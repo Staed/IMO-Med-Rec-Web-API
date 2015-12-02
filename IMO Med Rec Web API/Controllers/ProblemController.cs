@@ -40,13 +40,13 @@ namespace IMO_Med_Rec_Web_API.Controllers
         {
             HttpContent requestContent = Request.Content;
             string jsonContent = requestContent.ReadAsStringAsync().Result;
-​
+
             String name = jsonContent.Substring(jsonContent.IndexOf("problem=") + 8, jsonContent.IndexOf("description="));
             String description = jsonContent.Substring(jsonContent.IndexOf("description=") + 12, jsonContent.IndexOf("symptoms="));
             String symptoms = jsonContent.Substring(jsonContent.IndexOf("symptoms=") + 9);
             int lastID = problems[problems.Count - 1].id;
             lastID++;
-​
+
             System.Diagnostics.Debug.Print(problems.Count.ToString());
             problems.Add(new Problem(lastID, name, description, symptoms));
             System.Diagnostics.Debug.Print(problems.Count.ToString());
