@@ -36,7 +36,7 @@ namespace IMO_Med_Rec_Web_API.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult PostAllergy()
+        public IHttpActionResult PostProblem()
         {
             HttpContent requestContent = Request.Content;
             string jsonContent = requestContent.ReadAsStringAsync().Result;
